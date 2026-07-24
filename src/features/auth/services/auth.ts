@@ -7,6 +7,7 @@ import {
   signInWithEmailAndPassword,
   sendPasswordResetEmail,
   signOut,
+  updateProfile,
 } from "firebase/auth";
 
 import { auth } from "@/shared/lib/firebase";
@@ -20,14 +21,22 @@ export async function signInWithGoogle() {
 
 // Register
 export async function registerUser(
+  name: string,
   email: string,
   password: string
 ) {
-  return await createUserWithEmailAndPassword(
-    auth,
-    email,
-    password
-  );
+  const userCredential =
+    await createUserWithEmailAndPassword(
+      auth,
+      email,
+      password
+    );
+
+  await updateProfile(userCredential.user, {
+    displayName: name,
+  });
+
+  return userCredential;
 }
 
 // Login

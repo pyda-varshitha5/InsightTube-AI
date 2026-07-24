@@ -87,8 +87,7 @@ export default function RegisterPage() {
     try {
       setLoading(true);
 
-      await registerUser(email, password);
-
+      await registerUser(name, email, password);
       router.push("/dashboard");
     } catch (error: any) {
       switch (error.code) {
