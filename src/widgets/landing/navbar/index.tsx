@@ -9,7 +9,6 @@ export default function Navbar() {
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-10">
 
         {/* Logo */}
-
         <Link
           href="/"
           className="group flex items-center gap-3 transition-all duration-300"
@@ -18,63 +17,52 @@ export default function Navbar() {
             <Sparkles className="h-6 w-6 text-white" />
           </div>
 
-          <div>
-            <h1 className="text-3xl font-extrabold tracking-tight text-white">
-              InsightTube{" "}
-              <span className="bg-gradient-to-r from-violet-400 to-purple-300 bg-clip-text text-transparent">
-                AI
-              </span>
-            </h1>
-          </div>
+          <h1 className="text-3xl font-extrabold tracking-tight text-white">
+            InsightTube{" "}
+            <span className="bg-gradient-to-r from-violet-400 to-purple-300 bg-clip-text text-transparent">
+              AI
+            </span>
+          </h1>
         </Link>
 
         {/* Center Links */}
-
-        <nav className="hidden items-center gap-10 md:flex">
-
-          <a
-            href="#features"
-            className="text-sm font-medium text-zinc-400 transition duration-300 hover:text-white"
-          >
+        <nav className="hidden md:flex items-center gap-10">
+          <a href="#features" className="text-sm font-medium text-zinc-400 hover:text-white transition">
             Features
           </a>
 
-          <a
-            href="#how-it-works"
-            className="text-sm font-medium text-zinc-400 transition duration-300 hover:text-white"
-          >
+          <a href="#how-it-works" className="text-sm font-medium text-zinc-400 hover:text-white transition">
             How It Works
           </a>
 
-          <a
-            href="#testimonials"
-            className="text-sm font-medium text-zinc-400 transition duration-300 hover:text-white"
-          >
+          <a href="#testimonials" className="text-sm font-medium text-zinc-400 hover:text-white transition">
             Testimonials
           </a>
 
-          <a
-            href="#faq"
-            className="text-sm font-medium text-zinc-400 transition duration-300 hover:text-white"
-          >
+          <a href="#faq" className="text-sm font-medium text-zinc-400 hover:text-white transition">
             FAQ
           </a>
-
         </nav>
 
-        {/* Right */}
+        {/* Right Side */}
+        <div className="flex items-center gap-5">
 
-        <div className="flex items-center gap-4">
+  {/* Login */}
+  <Link
+    href="/login"
+    className="relative text-white font-medium transition-all duration-300 hover:text-violet-400"
+  >
+    Login
+  </Link>
 
-          <button className="hidden rounded-xl px-5 py-2 text-sm font-medium text-zinc-300 transition-all duration-300 hover:bg-white/5 hover:text-white md:block">
-            Login
-          </button>
-
-          <button className="rounded-xl bg-gradient-to-r from-violet-600 to-purple-600 px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-violet-600/40 active:scale-95">
-            Get Started
-          </button>
-
-        </div>
+  {/* Sign In */}
+  <Link
+  href="/register"
+  className="group relative overflow-hidden rounded-xl bg-gradient-to-r from-violet-600 via-purple-500 to-fuchsia-600 px-7 py-3 font-semibold text-white shadow-[0_0_30px_rgba(139,92,246,0.35)] transition-all duration-300 hover:scale-105"
+>
+  Sign In
+</Link>
+</div>
 
       </div>
     </header>
